@@ -45,5 +45,26 @@ if __name__ == '__main__':
     # para imprimir cuantos títulos completó cada usuario
     # y verifique si los primeros usuarios (mirando la página a ojo)
     # los datos recolectados son correctos.
+    url = requests.get("https://jsonplaceholder.typicode.com/todos")
+    
+    datos = url.json()
 
+    usuarios = range(1, 11)
+
+    complet_abs = [x.get('userId') for x in datos if x['completed'] == True]
+    
+    final_list = [complet_abs.count(i) for i in usuarios]
+    
+    print(final_list)
+    
+    fig = plt.figure()
+    fig.suptitle('títulos completados',color="b")
+    ax = fig.add_subplot()
+    ax.bar(usuarios, final_list,color="m")
+    ax.set_facecolor("moccasin")
+    ax.set_xlabel('user Id',color="navy")
+    ax.set_ylabel('títulos',color="darkgreen")
+    plt.show()
+
+    
     print("terminamos")

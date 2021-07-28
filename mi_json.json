@@ -1,0 +1,15 @@
+{
+    "nombre": "joel ",
+    "apellido": "lucero",
+    "DNI": "34677565",
+    "vestimenta": [
+        {
+            "prenda": "zapatilla",
+            "cantidad": "4"
+        },
+        {
+            "prenda": "remeras",
+            "cantidad": "12"
+        }
+    ]
+}
